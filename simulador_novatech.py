@@ -110,4 +110,8 @@ def trabajador(id_trabajador):
                 resultados["rechazados"] += 1
                 print(f"[{time.strftime('%H:%M:%S')}] [WORKER-{id_trabajador}] {pedido['id']} RECHAZADO | Stock insuficiente {producto}")
             
-            resultados["procesados"] += 1     
+            resultados["procesados"] += 1   
+            
+               # Le avisamos a la cola que terminamos con este pedido
+        cola_pedidos.task_done()
+  
