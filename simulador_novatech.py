@@ -55,3 +55,8 @@ lista_pedidos = [
     {"id": "ORD-019", "cliente": "Tito V.", "producto": "P004", "cantidad": 2},
     {"id": "ORD-020", "cliente": "Alma Z.", "producto": "P005", "cantidad": 1}
 ]
+
+# --------------------------------------------------------
+# 3. CONFIGURACIÓN DE LA COLA COMPARTIDA
+# --------------------------------------------------------
+cola_pedidos = queue.Queue()
