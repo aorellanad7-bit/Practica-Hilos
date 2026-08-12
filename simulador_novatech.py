@@ -39,4 +39,9 @@ lista_pedidos = [
     {"id": "ORD-003", "cliente": "Luis Gómez", "producto": "P005", "cantidad": 3},  # Contención por el P005 (solo hay 6)
     {"id": "ORD-004", "cliente": "Carmen Ruiz", "producto": "P005", "cantidad": 2}, # Contención por el P005
     {"id": "ORD-005", "cliente": "José Díaz", "producto": "P005", "cantidad": 2},   # Contención por el P005 (Este debería ser rechazado por CP-02)
+    {"id": "ORD-006", "cliente": "Elena Soto", "producto": "P003", "cantidad": 15},
+    {"id": "ORD-007", "cliente": "Pablo O.", "producto": "P008", "cantidad": 1},
+    {"id": "ORD-008", "cliente": "Sara Vega", "producto": "P004", "cantidad": -1},
+    {"id": "ORD-009", "cliente": "Raúl Gil", "producto": "P004", "cantidad": 0},
+    {"id": "ORD-010", "cliente": "Diana Paz", "producto": "P002", "cantidad": 2}
 ]
