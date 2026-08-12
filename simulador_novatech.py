@@ -87,3 +87,9 @@ def trabajador(id_trabajador):
                 resultados["procesados"] += 1
             cola_pedidos.task_done()
             continue
+        
+            print(f"[{time.strftime('%H:%M:%S')}] [WORKER-{id_trabajador}] Inicia pedido {pedido['id']} | Cliente: {pedido['cliente']}")
+        
+        # RF-04: Simular tiempo de procesamiento FUERA de la sección crítica (0.5 a 2 seg)
+        tiempo_simulacion = random.uniform(0.5, 2.0)
+        time.sleep(tiempo_simulacion)
