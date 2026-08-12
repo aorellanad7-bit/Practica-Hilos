@@ -43,5 +43,15 @@ lista_pedidos = [
     {"id": "ORD-007", "cliente": "Pablo O.", "producto": "P008", "cantidad": 1},
     {"id": "ORD-008", "cliente": "Sara Vega", "producto": "P004", "cantidad": -1},
     {"id": "ORD-009", "cliente": "Raúl Gil", "producto": "P004", "cantidad": 0},
-    {"id": "ORD-010", "cliente": "Diana Paz", "producto": "P002", "cantidad": 2}
+    {"id": "ORD-010", "cliente": "Diana Paz", "producto": "P002", "cantidad": 2},
+    {"id": "ORD-011", "cliente": "Jorge M.", "producto": "P001", "cantidad": 4},
+    {"id": "ORD-012", "cliente": "Lucía H.", "producto": "P003", "cantidad": 5},
+    {"id": "ORD-013", "cliente": "Víctor R.", "producto": "P001", "cantidad": 2},
+    {"id": "ORD-014", "cliente": "Marta L.", "producto": "P004", "cantidad": 3},
+    {"id": "ORD-015", "cliente": "Hugo C.", "producto": "P002", "cantidad": 1},
+    {"id": "ORD-016", "cliente": "Inés B.", "producto": "P003", "cantidad": 4},
+    {"id": "ORD-017", "cliente": "Omar F.", "producto": "P001", "cantidad": 3},
+    {"id": "ORD-018", "cliente": "Rosa N.", "producto": "P002", "cantidad": 6},
+    {"id": "ORD-019", "cliente": "Tito V.", "producto": "P004", "cantidad": 2},
+    {"id": "ORD-020", "cliente": "Alma Z.", "producto": "P005", "cantidad": 1}
 ]
