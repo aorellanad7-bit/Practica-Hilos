@@ -67,3 +67,14 @@ for pedido in lista_pedidos:
     
     # Evento para avisarle al monitor cuándo detenerse (CP-05)
 evento_fin_monitor = threading.Event()
+
+# --------------------------------------------------------
+# 4. LÓGICA DE LOS TRABAJADORES (WORKERS)
+# --------------------------------------------------------
+def trabajador(id_trabajador):
+    while not cola_pedidos.empty():
+        try:
+            # Extraemos un pedido de forma segura
+            pedido = cola_pedidos.get_nowait()
+        except queue.Empty:
+            break  # Si ya no hay pedidos, el hilo termina
