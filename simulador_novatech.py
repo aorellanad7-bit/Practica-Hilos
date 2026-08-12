@@ -78,3 +78,12 @@ def trabajador(id_trabajador):
             pedido = cola_pedidos.get_nowait()
         except queue.Empty:
             break  # Si ya no hay pedidos, el hilo termina
+        
+          # CP-04: Capturar errores de pedidos mal formados sin detener el programa
+        if "producto" not in pedido or "cantidad" not in pedido or pedido["cantidad"] <= 0 or pedido["producto"] not in inventario:
+            print(f"[WORKER-{id_trabajador}] {pedido.get('id', 'ERROR')} FALLÓ | Pedido inválido.")
+            with lock_inventario:
+                resultados["errores"] += 1
+                resultados["procesados"] += 1
+            cola_pedidos.task_done()
+            continue
