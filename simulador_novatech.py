@@ -60,3 +60,7 @@ lista_pedidos = [
 # 3. CONFIGURACIÓN DE LA COLA COMPARTIDA
 # --------------------------------------------------------
 cola_pedidos = queue.Queue()
+
+# Llenamos la cola con los pedidos que creamos arriba (RF-02)
+for pedido in lista_pedidos:
+    cola_pedidos.put(pedido)
