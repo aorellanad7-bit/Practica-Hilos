@@ -114,4 +114,12 @@ def trabajador(id_trabajador):
             
                # Le avisamos a la cola que terminamos con este pedido
         cola_pedidos.task_done()
+        
+        # --------------------------------------------------------
+# 5. LÓGICA DEL MONITOR
+# --------------------------------------------------------
+def monitor():
+    # Se ejecutará hasta que el evento_fin_monitor sea activado
+    while not evento_fin_monitor.is_set():
+        pendientes = cola_pedidos.qsize()
   
