@@ -132,3 +132,21 @@ def monitor():
         
         # RF-07: Actualizar estado cada 1-2 segundos
         time.sleep(1.5)
+        
+                # --------------------------------------------------------
+# 6. HILO PRINCIPAL (MAIN) Y EJECUCIÓN
+# --------------------------------------------------------
+if __name__ == "__main__":
+    print("=== INICIANDO SIMULADOR DE NOVATECH ===")
+    tiempo_inicio = time.time()
+
+    # Creamos e iniciamos el hilo monitor (RF-07)
+    hilo_monitor = threading.Thread(target=monitor, name="Monitor")
+    hilo_monitor.start()
+
+    # Creamos e iniciamos los 3 hilos trabajadores (RF-03)
+    hilos_trabajadores = []
+    for i in range(1, 4):
+        t = threading.Thread(target=trabajador, args=(i,), name=f"Worker-{i}")
+        hilos_trabajadores.append(t)
+        t.start()
