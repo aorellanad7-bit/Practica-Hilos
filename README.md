@@ -50,3 +50,8 @@ El simulador se compone de:
    ```bash
    git clone [https://github.com/aorellanad7-bit/Practica-Hilos.git](https://github.com/aorellanad7-bit/Practica-Hilos.git)
    cd Practica-Hilos
+
+2. ejecutar el simulador
+   python simulador_novatech.py
+
+     
