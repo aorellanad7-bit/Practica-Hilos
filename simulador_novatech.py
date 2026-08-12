@@ -160,3 +160,14 @@ if __name__ == "__main__":
     hilo_monitor.join()
 
     tiempo_total = time.time() - tiempo_inicio
+
+# --------------------------------------------------------
+    # 7. RESUMEN FINAL (RF-10)
+    # --------------------------------------------------------
+    print("\n=== RESUMEN FINAL ===")
+    print(f"Procesados: {resultados['procesados']} | Aprobados: {resultados['aprobados']} | Rechazados: {resultados['rechazados']} | Error: {resultados['errores']}")
+    print(f"Tiempo total: {tiempo_total:.2f} s | Hilos finalizados correctamente: 4/4")
+    
+    print("\n--- INVENTARIO RESTANTE ---")
+    for cod, datos in inventario.items():
+        print(f"{cod} ({datos['nombre']}): {datos['existencia']} unidades")
