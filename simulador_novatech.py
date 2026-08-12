@@ -122,4 +122,13 @@ def monitor():
     # Se ejecutará hasta que el evento_fin_monitor sea activado
     while not evento_fin_monitor.is_set():
         pendientes = cola_pedidos.qsize()
-  
+        # Leemos los contadores de forma segura
+        with lock_inventario:
+            aprobados = resultados["aprobados"]
+            rechazados = resultados["rechazados"]
+            activos = threading.active_count() - 2 # Descontamos el main y el monitor
+            
+        print(f"[MONITOR] Pendientes: {pendientes} | Aprobados: {aprobados} | Rechazados: {rechazados} | Activos: {activos}")
+        
+        # RF-07: Actualizar estado cada 1-2 segundos
+        time.sleep(1.5)
