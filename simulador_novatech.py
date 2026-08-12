@@ -150,3 +150,13 @@ if __name__ == "__main__":
         t = threading.Thread(target=trabajador, args=(i,), name=f"Worker-{i}")
         hilos_trabajadores.append(t)
         t.start()
+        
+        # Esperamos a que todos los trabajadores terminen con join (RF-09)
+    for t in hilos_trabajadores:
+        t.join()
+
+    # Avisamos al monitor que ya terminamos y esperamos a que cierre limpio (CP-05)
+    evento_fin_monitor.set()
+    hilo_monitor.join()
+
+    tiempo_total = time.time() - tiempo_inicio
