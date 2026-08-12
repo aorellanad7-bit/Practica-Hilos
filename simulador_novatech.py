@@ -95,6 +95,19 @@ def trabajador(id_trabajador):
         time.sleep(tiempo_simulacion)
         
           # RF-05 y CP-02: SECCIÓN CRÍTICA - Validación y descuento atómico
+       
         with lock_inventario:
             producto = pedido["producto"]
             cantidad_solicitada = pedido["cantidad"]
+            
+            if inventario[producto]["existencia"] >= cantidad_solicitada:
+                # Hay stock: Aprobamos y descontamos
+                inventario[producto]["existencia"] -= cantidad_solicitada
+                resultados["aprobados"] += 1
+                print(f"[{time.strftime('%H:%M:%S')}] [WORKER-{id_trabajador}] {pedido['id']} APROBADO | {producto}: -{cantidad_solicitada} unidades")
+            else:
+                # No hay stock: Rechazamos sin tocar inventario (CP-03)
+                resultados["rechazados"] += 1
+                print(f"[{time.strftime('%H:%M:%S')}] [WORKER-{id_trabajador}] {pedido['id']} RECHAZADO | Stock insuficiente {producto}")
+            
+            resultados["procesados"] += 1     
