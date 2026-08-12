@@ -26,3 +26,17 @@ resultados = {
     "rechazados": 0,
     "errores": 0
 }
+
+# --------------------------------------------------------
+# 2. CASOS DE PRUEBA (Mínimo 20 pedidos)
+# --------------------------------------------------------
+# Diseñados para cubrir CP-01 (Normal), CP-02 (Contención), 
+# CP-03 (Stock Insuficiente) y CP-04 (Inválidos).
+
+lista_pedidos = [
+    {"id": "ORD-001", "cliente": "Ana López", "producto": "P001", "cantidad": 2},   # Normal
+    {"id": "ORD-002", "cliente": "Mario Pérez", "producto": "P002", "cantidad": 5}, # Normal
+    {"id": "ORD-003", "cliente": "Luis Gómez", "producto": "P005", "cantidad": 3},  # Contención por el P005 (solo hay 6)
+    {"id": "ORD-004", "cliente": "Carmen Ruiz", "producto": "P005", "cantidad": 2}, # Contención por el P005
+    {"id": "ORD-005", "cliente": "José Díaz", "producto": "P005", "cantidad": 2},   # Contención por el P005 (Este debería ser rechazado por CP-02)
+]
