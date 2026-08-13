@@ -2,7 +2,7 @@
 
 Este proyecto es una solución multihilo en Python que simula un sistema de procesamiento de pedidos e inventario concurrente, resolviendo problemas de **condiciones de carrera (*race conditions*)** mediante el uso de exclusión mutua (**Mutex Locks**) y colas seguras para hilos (**Thread-safe Queues**).
 
-## 🛠️ Tecnologías y Primitivas Utilizadas
+##  Tecnologías y Primitivas Utilizadas
 
 * **Lenguaje:** Python 3.10+
 * **Concurrencia y Sincronización:**
